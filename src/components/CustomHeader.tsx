@@ -48,168 +48,93 @@ export default function CustomHeader({
 
   return (
     <View style={{
+      paddingTop: dimensions.spacing.sm,
+      paddingBottom: dimensions.spacing.md,
+      paddingHorizontal: dimensions.spacing.md,
       backgroundColor: colors.background,
-      borderBottomWidth: 1,
-      borderBottomColor: colors.border,
-      shadowColor: colors.shadow,
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.1,
-      shadowRadius: 4,
-      elevation: 3,
-      zIndex: 100,
     }}>
+
+      {/* Top Row */}
       <View style={{
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: dimensions.spacing.md,
-        paddingBottom: dimensions.spacing.md,
-        paddingTop: dimensions.spacing.sm,
-        minHeight: 60,
+        justifyContent: 'space-between',
       }}>
-        {/* Left Section */}
-        <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
+
+        {/* Left */}
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
           {showBackButton && (
-            <TouchableOpacity
-              onPress={handleBackPress}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-                backgroundColor: colors.surface,
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginRight: dimensions.spacing.sm,
-                shadowColor: colors.shadow,
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                elevation: 2,
-              }}
-            >
-              <Icon name="arrow-left" size={18} color={colors.text} />
+            <TouchableOpacity onPress={handleBackPress}>
+              <Icon name="arrow-left" size={22} color={colors.text} />
             </TouchableOpacity>
           )}
-          
+
           {showMenuButton && (
-            <TouchableOpacity
-              onPress={onMenuPress}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-                backgroundColor: colors.surface,
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginRight: dimensions.spacing.sm,
-                shadowColor: colors.shadow,
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                elevation: 2,
-              }}
-            >
-              <Icon name="menu" size={20} color={colors.text} />
+            <TouchableOpacity onPress={onMenuPress}>
+              <Icon name="menu" size={22} color={colors.text} />
             </TouchableOpacity>
           )}
-          
-          <Text style={{
-            fontSize: dimensions.fontSize.xl,
-            fontWeight: '700',
-            color: colors.text,
-            flex: 1,
-          }}>
-            {title}
-          </Text>
         </View>
 
-        {/* Right Section */}
-        <View style={{ flexDirection: 'row', alignItems: 'center', gap: dimensions.spacing.sm }}>
+        {/* Center Title */}
+        <Text style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          textAlign: 'center',
+          fontSize: dimensions.fontSize.xl,
+          fontWeight: '800',
+          color: colors.text,
+        }}>
+          {title}
+        </Text>
+
+        {/* Right */}
+        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
           {showThemeToggle && (
-            <TouchableOpacity
-              onPress={toggleTheme}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-                backgroundColor: colors.surface,
-                justifyContent: 'center',
-                alignItems: 'center',
-                shadowColor: colors.shadow,
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                elevation: 2,
-              }}
-            >
-              <Icon name={isDark ? 'sun' : 'moon'} size={18} color={colors.text} />
+            <TouchableOpacity onPress={toggleTheme}>
+              <Icon name={isDark ? 'sun' : 'moon'} size={20} color={colors.primary} />
             </TouchableOpacity>
           )}
-          
+
           {showNotificationButton && (
-            <TouchableOpacity
-              onPress={onNotificationPress}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-                backgroundColor: colors.surface,
-                justifyContent: 'center',
-                alignItems: 'center',
-                shadowColor: colors.shadow,
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                elevation: 2,
-              }}
-            >
-              <Icon name="bell" size={18} color={colors.text} />
+            <TouchableOpacity onPress={onNotificationPress}>
+              <Icon name="bell" size={20} color={colors.text} />
             </TouchableOpacity>
           )}
-          
+
           {showSettingsButton && (
-            <TouchableOpacity
-              onPress={onSettingsPress}
-              style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-                backgroundColor: colors.surface,
-                justifyContent: 'center',
-                alignItems: 'center',
-                shadowColor: colors.shadow,
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                elevation: 2,
-              }}
-            >
-              <Icon name="settings" size={18} color={colors.text} />
+            <TouchableOpacity onPress={onSettingsPress}>
+              <Icon name="settings" size={20} color={colors.text} />
             </TouchableOpacity>
           )}
-          
+
           {showProfileButton && (
             <TouchableOpacity
               onPress={onProfilePress}
               style={{
-                width: 40,
-                height: 40,
-                borderRadius: 20,
-                backgroundColor: colors.surface,
+                width: 32,
+                height: 32,
+                borderRadius: 16,
+                backgroundColor: colors.primary,
                 justifyContent: 'center',
                 alignItems: 'center',
-                shadowColor: colors.shadow,
-                shadowOffset: { width: 0, height: 1 },
-                shadowOpacity: 0.2,
-                shadowRadius: 2,
-                elevation: 2,
               }}
             >
-              <Icon name="user" size={18} color={colors.text} />
+              <Icon name="user" size={16} color="#fff" />
             </TouchableOpacity>
           )}
         </View>
       </View>
+
+      {/* Optional Subtitle / Divider */}
+      <View style={{
+        height: 1,
+        backgroundColor: colors.border,
+        marginTop: 10,
+        opacity: 0.5,
+      }} />
+
     </View>
   );
 }

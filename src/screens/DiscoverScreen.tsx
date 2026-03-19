@@ -194,14 +194,7 @@ export default function HomeScreen() {
         padding: dimensions.spacing.md,
         paddingBottom: 100,
       }}>
-        <Text style={{
-          fontSize: dimensions.fontSize.xxl,
-          fontWeight: "bold",
-          color: colors.text,
-          marginBottom: dimensions.spacing.lg
-        }}>
-          Discover Music
-        </Text>
+       
 
         {/* SEARCH */}
         <View style={{
