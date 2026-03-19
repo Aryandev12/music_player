@@ -53,13 +53,13 @@ Tech Stack
 Project Structure
 
 src/
-components/
-screens/
-store/
-services/
-contexts/
-constants/
-types/
+├── components/
+├── screens/
+├── store/
+├── services/
+├── contexts/
+├── constants/
+└── types/
 
 ---
 
