@@ -1,57 +1,46 @@
-MusicApp - Music Streaming Application
+# MusicApp - Music Streaming Application
 
 This project is a music streaming application built using React Native (Expo) and TypeScript. It integrates with the JioSaavn API to provide real-time music discovery, playback, and queue management.
 
----
-
-Overview
+## Overview
 
 The application focuses on delivering a smooth and consistent playback experience with clean architecture, responsive UI, and synchronized state management across screens.
 
----
+## Features
 
-Features
-
-Core Functionality
-
+### Core Functionality
 * Search songs, artists, and albums using JioSaavn API
 * Stream audio with playback controls
 * Queue management (add, reorder, remove songs)
 * Seek bar with real-time position tracking
 
-Player Experience
-
+### Player Experience
 * Full-screen music player
 * Persistent mini player
 * Synchronized playback state across screens
 * Background playback support
 
-UI and Experience
-
+### UI and Experience
 * Light and dark theme support
 * Responsive layout for different screen sizes
 * Card-based modern UI
 
-Playback Controls
-
+### Playback Controls
 * Shuffle mode
 * Repeat modes (off, one, all)
 
----
+## Tech Stack
 
-Tech Stack
+* **Framework:** React Native (Expo)
+* **Language:** TypeScript
+* **State Management:** Zustand
+* **Navigation:** React Navigation v6
+* **Audio:** Expo AV (audio playback)
+* **Storage:** AsyncStorage / MMKV (optional persistence)
 
-* React Native (Expo)
-* TypeScript
-* Zustand (state management)
-* React Navigation v6
-* Expo AV (audio playback)
-* AsyncStorage / MMKV (optional persistence)
+## Project Structure
 
----
-
-Project Structure
-
+```text
 src/
 ├── components/
 ├── screens/
@@ -60,8 +49,7 @@ src/
 ├── contexts/
 ├── constants/
 └── types/
-
----
+```
 
 Application Flow
 
